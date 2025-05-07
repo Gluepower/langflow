@@ -5,8 +5,8 @@ WORKDIR /app
 # Copy Langflow source into container
 COPY . .
 
-# Install Langflow + custom deps
-RUN pip install -r requirements.txt
+# Install Langflow from source + custom deps
+RUN pip install .
 RUN pip install exa_py
 
 # Start Langflow
