@@ -1,8 +1,6 @@
 FROM langflowai/langflow:latest
 
-# Install extra requirements
-COPY ./langflow/requirements.local.txt /tmp/requirements.local.txt
-RUN pip install -r /tmp/requirements.local.txt
+# Install custom package directly (exa_py for example)
+RUN pip install exa_py
 
-# Start Langflow
 ENTRYPOINT ["python", "-m", "langflow", "run"]
