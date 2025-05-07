@@ -1,6 +1,11 @@
-FROM langflowai/langflow:latest
+FROM python:3.11
 
-# Install custom package directly (exa_py for example)
+WORKDIR /app
+
+# Install Langflow from source
+COPY . .
+
+RUN pip install -r requirements.txt
 RUN pip install exa_py
 
-ENTRYPOINT ["python", "-m", "langflow", "run"]
+CMD ["python", "-m", "langflow", "run"]
