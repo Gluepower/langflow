@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ['python310', 'git', 'gcc']
+
+[phases.build]
+cmds = [
+  'pip install --upgrade pip',
+  'pip install -r requirements.txt'
+]
+
+[start]
+cmd = 'python -m src.backend.langflow'
